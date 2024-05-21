@@ -21,7 +21,6 @@ power_options = ["10", "12", "14", "16", "18", "20"]
 bold_font = ('TkDefaultFont', 12, 'bold')
 Entries_bold_font = ('TkDefaultFont', 10, 'bold')
 
-
 # Create the main window
 root = tk.Tk()
 root.title("MECSware Interface")
@@ -38,16 +37,8 @@ root.grid_columnconfigure(0, weight=1)
 # Create the main frame with padding
 frame = ttk.Frame(root, padding="20")
 frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
-frame.columnconfigure(0, weight=1)  # Allow horizontal expansion
-frame.columnconfigure(1, weight=1)  # Allow horizontal expansion
-frame.columnconfigure(2, weight=1)  # Allow horizontal expansion
-frame.columnconfigure(3, weight=1)  # Allow horizontal expansion
-frame.columnconfigure(4, weight=1)  # Allow horizontal expansion
-frame.columnconfigure(5, weight=1)  # Allow horizontal expansion
-frame.columnconfigure(6, weight=1)  # Allow horizontal expansion
-frame.columnconfigure(7, weight=1)  # Allow horizontal expansion
-
-
+for i in range(8):
+    frame.columnconfigure(i, weight=1)
 
 def clear_console():
     """Clears the console."""
@@ -167,7 +158,7 @@ def execute_command():
 
 # Function to handle closing any open list
 def close_open_lists(event):
-    for child in root.winfo_children():
+    for child in frame.winfo_children():
         if isinstance(child, tk.Frame):
             child.place_forget()
 
@@ -177,11 +168,11 @@ root.bind("<Button-1>", close_open_lists)
 # Create a function to set up a custom combobox
 def create_custom_combobox(row, column, options, default_value):
     # Create a combobox-like entry widget
-    combobox_entry = ttk.Entry(root)
+    combobox_entry = ttk.Entry(frame)
     combobox_entry.grid(row=row, column=column, padx=10, pady=10)
 
     # Create a Listbox to act as the dropdown list with a scrollbar
-    listbox_frame = tk.Frame(root)
+    listbox_frame = tk.Frame(frame)
     listbox = tk.Listbox(listbox_frame, font=('TkDefaultFont', 12), width=20)
     scrollbar = ttk.Scrollbar(listbox_frame, orient=tk.VERTICAL, command=listbox.yview)
     listbox.config(yscrollcommand=scrollbar.set)
@@ -192,28 +183,25 @@ def create_custom_combobox(row, column, options, default_value):
     for option in options:
         listbox.insert(tk.END, option)
 
-    # Function to handle item selection
     def select_item(event):
-        selection = listbox.curselection()
-        if selection:  # Check if there is a selection
-            selected_item = listbox.get(selection)
-            combobox_entry.delete(0, tk.END)
-            combobox_entry.insert(0, selected_item)
-            combobox_entry.focus_set()  # Set focus to the entry
-            listbox_frame.place_forget()  # Close the listbox
+        """Function to handle item selection"""
+        selected_item = listbox.get(listbox.curselection())
+        combobox_entry.delete(0, tk.END)
+        combobox_entry.insert(0, selected_item)
+        listbox_frame.place_forget()
 
     # Bind the selection event to the Listbox
-    listbox.bind("<Button-1>", select_item)
+    listbox.bind("<<ListboxSelect>>", select_item)
 
-    # Function to show/hide the dropdown list
     def toggle_dropdown(event=None):
-        close_open_lists(None)  # Close any open lists first
+        """Function to show/hide the dropdown list"""
+        close_open_lists(None)
         if not listbox_frame.winfo_ismapped():
             listbox_frame.place(x=combobox_entry.winfo_x(), y=combobox_entry.winfo_y() + combobox_entry.winfo_height())
             listbox_frame.lift()
 
-    # Function to filter options based on entry text
     def filter_options(event):
+        """Function to filter options based on entry text"""
         typed = combobox_entry.get()
         listbox.delete(0, tk.END)
         for option in options:
@@ -222,31 +210,27 @@ def create_custom_combobox(row, column, options, default_value):
         if listbox.size() > 0:
             toggle_dropdown()
 
-    # Bind the entry widget to the filter function
     combobox_entry.bind("<KeyRelease>", filter_options)
-
-    # Bind the entry widget to toggle the dropdown list
     combobox_entry.bind("<Button-1>", toggle_dropdown)
-
-    # Set the default value
     combobox_entry.insert(0, default_value)
-
-    # Create a button to toggle the dropdown list
-    dropdown_button = ttk.Button(root, text="▼", command=toggle_dropdown)
+    
+    dropdown_button = ttk.Button(frame, text="▼", command=toggle_dropdown)
     dropdown_button.grid(row=row, column=column + 1, padx=(0, 10))
 
+    listbox_frame.place_forget()
 
-
-
+    return combobox_entry
 
 # Load and display the logo image
-image = Image.open("/home/pi/Desktop/MECSware_GUI/logo.png")
-image = image.convert("RGBA")  # Ensure the image has an alpha channel for transparency
-image_resized = image.resize((180, 70), Image.ANTIALIAS)
-logo = ImageTk.PhotoImage(image_resized)
-logo_label = tk.Label(frame, image=logo, bg="ghost white")
-logo_label.grid(row=1, column=6, rowspan=2, columnspan=2)  # Adjust the position as needed
-#logo_label.place(x=600, y=300)  # Adjust the position as needed
+try:
+    image = Image.open("/home/pi/Desktop/MECSware_GUI/logo.png")
+    image = image.convert("RGBA")  # Ensure the image has an alpha channel for transparency
+    image_resized = image.resize((180, 70), Image.ANTIALIAS)
+    logo = ImageTk.PhotoImage(image_resized)
+    logo_label = tk.Label(frame, image=logo, bg="ghost white")
+    logo_label.grid(row=0, column=6, rowspan=2, columnspan=2)  # Adjust the position as needed
+except Exception as e:
+    messagebox.showerror("Error", f"Unable to load image: {e}")
 
 width_c = 15
 
@@ -287,7 +271,7 @@ x_spacing = 10
 y_spacing = 20
 
 current_settings_label = ttk.Label(frame, text="Current Settings", width=width_c, anchor=tk.CENTER, font=bold_font)
-current_settings_label.grid(row=1, column=1, columnspan=2, pady= y_spacing, padx=x_spacing)
+current_settings_label.grid(row=1, column=1, columnspan=2, pady=y_spacing, padx=x_spacing)
 
 desired_settings_label = ttk.Label(frame, text="Desired Settings", width=width_c, anchor=tk.CENTER, font=bold_font)
 desired_settings_label.grid(row=1, column=3, columnspan=2, pady=y_spacing, padx=x_spacing)
@@ -305,10 +289,10 @@ power_label = ttk.Label(frame, text="[dBm]", width=width_c-10, anchor=tk.W, font
 power_label.grid(row=5, column=5, pady=(10,0), sticky=tk.W)
 
 # Create custom comboboxes for frequency, bandwidth, ratio, and power
-create_custom_combobox(row=2, column=3, options=freq_options, default_value="3700")
-create_custom_combobox(row=3, column=3, options=bw_options, default_value="20")
-create_custom_combobox(row=4, column=3, options=ratio_options, default_value="5:5")
-create_custom_combobox(row=5, column=3, options=power_options, default_value="20")
+freq_combobox = create_custom_combobox(row=2, column=3, options=freq_options, default_value="3700")
+bw_combobox = create_custom_combobox(row=3, column=3, options=bw_options, default_value="20")
+ratio_combobox = create_custom_combobox(row=4, column=3, options=ratio_options, default_value="5:5")
+power_combobox = create_custom_combobox(row=5, column=3, options=power_options, default_value="20")
 
 # Create labels to display the current settings
 current_freq_label = ttk.Label(frame, text="Frequency:", width=width_c, anchor=tk.E, font=Entries_bold_font)
