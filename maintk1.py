@@ -162,7 +162,7 @@ frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
 
 ###########################################
 #image = Image.open("/home/pi/Desktop/Stuff/logo.png")
-image = Image.open("/home/pi/Desktop/Stuff/logo_neu.png")
+image = Image.open("/home/pi/Desktop/MECSware_GUI/logo_neu.png")
 
 # Ensure the image has an alpha channel for transparency
 image = image.convert("RGBA")
