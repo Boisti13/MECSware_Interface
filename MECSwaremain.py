@@ -147,7 +147,8 @@ bold_font = ('TkDefaultFont', 12, 'bold')
 
 # Create the main window
 root = tk.Tk()
-root.title("Königlicher MECSware Manipulator")
+#root.title("Königlicher MECSware Manipulator")
+root.title("MECSware Interface")
 
 # Set the theme for the application
 style = ThemedStyle(root)
