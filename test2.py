@@ -17,6 +17,17 @@ bw_options = ["5", "10", "15", "20"]
 ratio_options = ["5:5", "7:3", "4:1"]
 power_options = ["10", "12", "14", "16", "18", "20"]
 
+# Creat a list of intial setup values
+ip_intital = "10.0.1.2"
+port_initial = "6327"
+name_initial ="BS-114"
+id_initial = "14"
+band_initial = "78"
+freq_initial = "3700"
+bw_initial = "5"
+ratio_initial = "5:5"
+power_intial = "10"
+
 # Create a style for bold text
 bold_font = ('TkDefaultFont', 12, 'bold')
 Entries_bold_font = ('TkDefaultFont', 10, 'bold')
@@ -166,7 +177,6 @@ def close_open_lists(event):
 root.bind("<Button-1>", close_open_lists)
 
 # Create a function to set up a custom combobox
-# Create a function to set up a custom combobox
 def create_custom_combobox(row, column, options, default_value):
     # Create a combobox-like entry widget
     combobox_entry = ttk.Entry(frame, justify='right')
@@ -210,6 +220,7 @@ def create_custom_combobox(row, column, options, default_value):
         listbox.delete(0, tk.END)
         for option in options:
             if typed.lower() in option.lower():
+                # Center-align text by adding spaces
                 listbox.insert(tk.END, f'{option:^20}')
         if listbox.size() > 0:
             toggle_dropdown()
@@ -242,32 +253,32 @@ width_c = 15
 name_label = ttk.Label(frame, text="Name:", width=width_c-5, anchor=tk.E)
 name_label.grid(row=3, column=6)
 name_entry = ttk.Entry(frame, width=width_c-5)
-name_entry.insert(0, "BS-114")
+name_entry.insert(0, name_initial)
 name_entry.grid(row=3, column=7, sticky=tk.W)
 
 id_label = ttk.Label(frame, text="ID:", width=width_c-5, anchor=tk.E)
 id_label.grid(row=4, column=6)
 id_entry = ttk.Entry(frame, width=width_c-5)
-id_entry.insert(0, "14")
+id_entry.insert(0, id_initial)
 id_entry.grid(row=4, column=7, sticky=tk.W)
 
 band_label = ttk.Label(frame, text="Band:", width=width_c-5, anchor=tk.E)
 band_label.grid(row=5, column=6)
 band_entry = ttk.Entry(frame, width=width_c-5)
-band_entry.insert(0, "78")
+band_entry.insert(0, band_initial)
 band_entry.grid(row=5, column=7, sticky=tk.W)
 
 # Create labels and entry fields for IP Address and Port
 ip_label = ttk.Label(frame, text="IP Address:", width=width_c, anchor=tk.E)
 ip_label.grid(row=0, column=0, columnspan=1)
 ip_entry = ttk.Entry(frame, width=width_c, justify='center')
-ip_entry.insert(0, "10.0.1.2")
+ip_entry.insert(0, ip_intital)
 ip_entry.grid(row=0, column=1, columnspan=1)
 
 port_label = ttk.Label(frame, text="Port:", width=width_c, anchor=tk.E)
 port_label.grid(row=0, column=2)
 port_entry = ttk.Entry(frame, width=width_c, justify='center')
-port_entry.insert(0, "6327")
+port_entry.insert(0, port_initial)
 port_entry.grid(row=0, column=3, columnspan=1)
 
 # Create labels for current and desired settings
@@ -293,10 +304,10 @@ power_label = ttk.Label(frame, text="[dBm]", width=width_c-10, anchor=tk.W, font
 power_label.grid(row=5, column=5, pady=(10,0), sticky=tk.W)
 
 # Create custom comboboxes for frequency, bandwidth, ratio, and power
-freq_combobox = create_custom_combobox(row=2, column=3, options=freq_options, default_value="3700")
-bw_combobox = create_custom_combobox(row=3, column=3, options=bw_options, default_value="20")
-ratio_combobox = create_custom_combobox(row=4, column=3, options=ratio_options, default_value="5:5")
-power_combobox = create_custom_combobox(row=5, column=3, options=power_options, default_value="20")
+freq_combobox = create_custom_combobox(row=2, column=3, options=freq_options, default_value=freq_initial)
+bw_combobox = create_custom_combobox(row=3, column=3, options=bw_options, default_value=bw_initial)
+ratio_combobox = create_custom_combobox(row=4, column=3, options=ratio_options, default_value=ratio_initial)
+power_combobox = create_custom_combobox(row=5, column=3, options=power_options, default_value=power_intial)
 
 # Create labels to display the current settings
 current_freq_label = ttk.Label(frame, text="Frequency:", width=width_c, anchor=tk.E, font=Entries_bold_font)
