@@ -1,27 +1,35 @@
 #!/bin/bash
 
+#!/bin/bash
+
 # Update and upgrade the package list
 echo "Updating and upgrading the package list..."
 sudo apt-get update -y
 sudo apt-get upgrade -y
 
-# Install Python3 and pip if not already installed
-echo "Installing Python3 and pip..."
+# Install Python3, pip, and venv if not already installed
+echo "Installing Python3, pip, and venv..."
 sudo apt-get install python3 -y
 sudo apt-get install python3-pip -y
+sudo apt-get install python3-venv -y
 
-# Install Tkinter
-echo "Installing Tkinter..."
-sudo apt-get install python3-tk -y
+# Create a virtual environment
+echo "Creating a virtual environment..."
+python3 -m venv mecsware_env
 
-# Install required Python libraries
+# Activate the virtual environment
+source mecsware_env/bin/activate
+
+# Install required Python libraries inside the virtual environment
 echo "Installing required Python libraries..."
-pip install ttkthemes pillow --break-system-packages
+pip install ttkthemes pillow
 
-echo "All necessary libraries and dependencies have been installed."
+echo "All necessary libraries and dependencies have been installed in the virtual environment."
 
 # Display a message to indicate completion
-echo "Setup is complete. You can now run your Python script."
+echo "Setup is complete. To activate the virtual environment, run 'source mecsware_env/bin/activate'."
+echo "You can now run your Python script within the virtual environment."
+
 
 
 #   make the script executable
