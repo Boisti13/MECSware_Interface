@@ -7,16 +7,16 @@ sudo apt-get upgrade -y
 
 # Install Python3 and pip if not already installed
 echo "Installing Python3 and pip..."
-sudo apt-get install python3 -y
-sudo apt-get install python3-pip -y
+sudo apt-get install python3 -y --break-system-packages
+sudo apt-get install python3-pip -y --break-system-packages
 
 # Install Tkinter
 echo "Installing Tkinter..."
-sudo apt-get install python3-tk -y
+sudo apt-get install python3-tk -y --break-system-packages
 
 # Install required Python libraries
 echo "Installing required Python libraries..."
-pip3 install ttkthemes pillow
+pip3 install ttkthemes pillow --break-system-packages
 
 echo "All necessary libraries and dependencies have been installed."
 
