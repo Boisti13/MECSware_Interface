@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 # Update and upgrade the package list
 echo "Updating and upgrading the package list..."
 sudo apt-get update -y
@@ -22,14 +20,12 @@ source mecsware_env/bin/activate
 
 # Install required Python libraries inside the virtual environment
 echo "Installing required Python libraries..."
-pip install ttkthemes pillow
+pip install ttkthemes pillow --break-system-packages
 
 echo "All necessary libraries and dependencies have been installed in the virtual environment."
 
 # Display a message to indicate completion
-echo "Setup is complete. To activate the virtual environment, run 'source mecsware_env/bin/activate'."
-echo "You can now run your Python script within the virtual environment."
-
+echo "Setup is complete. To activate the virtual environment, run 'source
 
 
 #   make the script executable
