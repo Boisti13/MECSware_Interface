@@ -16,7 +16,7 @@ sudo apt-get install python3-tk -y
 
 # Install required Python libraries
 echo "Installing required Python libraries..."
-pip3 install ttkthemes pillow --break-system-packages
+pip install ttkthemes pillow --break-system-packages
 
 echo "All necessary libraries and dependencies have been installed."
 
