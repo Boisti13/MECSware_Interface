@@ -16,9 +16,9 @@ chmod +x setup.sh
 ```
 ### Setup static IP for interface eth0
 Check which interface you want to use to connect the BS-114 system
-````
+```
 ifconfig
-````
+```
 
 ```
 sudo nano /etc/network/interfaces
