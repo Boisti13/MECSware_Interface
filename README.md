@@ -1,6 +1,6 @@
 # Interface for MACSware BS-114 system
 
-How to setup:
+## How to setup:
 - make the script executable
 ```
 chmod +x setup.sh
