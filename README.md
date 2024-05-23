@@ -19,7 +19,7 @@ Check which interface you want to use to connect the BS-114 system
 ```
 ifconfig
 ```
-
+open the interface config
 ```
 sudo nano /etc/network/interfaces
 ```
