@@ -26,6 +26,13 @@ git clone https://github.com/Boisti13/MECSware_Interface
 ```
 #### Make the script executable
 ```
+cd Desktop/MECSware_Interface
+```
+check if repro was cloned
+```
+ls
+```
+```
 chmod +x setup.sh
 ```
 #### Execute the scrip
