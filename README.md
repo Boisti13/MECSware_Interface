@@ -10,7 +10,7 @@ chmod +x setup.sh
 ./setup.sh
 ```
 
-## If neccessary, disable and enable eth0 (static setup, connected to BS-114)
+### If neccessary, disable and enable eth0 (static setup, connected to BS-114)
 
 Disable Interface eth0
 ```
