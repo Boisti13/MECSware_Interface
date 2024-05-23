@@ -40,6 +40,11 @@ chmod +x setup.sh
 ```
 ./setup.sh
 ```
+### Run MECSware GUI
+```
+python3 MECSware_GUI.py
+```
+
 ### Setup static IP for interface eth0
 Check which interface you want to use to connect the BS-114 system
 ```
