@@ -2,10 +2,21 @@
 
 ![image](https://github.com/Boisti13/MECSware_Interface/assets/76182879/28b5fc84-59cf-4e16-8194-7040abba20cd)
 
+Interface to interact with the MACSware BS-114 5G system
 
 ## How to setup:
 
 ### Install all neccessary packages
+### Install GIT
+```
+sudo apt-get update -y && sudo apt-get upgrade -y
+```
+```
+sudo apt-get install git-all
+```
+```
+git version
+```
 #### Make the script executable
 ```
 chmod +x setup.sh
