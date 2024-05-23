@@ -4,15 +4,17 @@
 
 
 ## How to setup:
-### Make the script executable
+
+### Install all neccessary packages
+#### Make the script executable
 ```
 chmod +x setup.sh
 ```
-### Execute the scrip
+#### Execute the scrip
 ```
 ./setup.sh
 ```
-### Setup static IP for interface eth0
+#### Setup static IP for interface eth0
 ```
 sudo nano /etc/network/interfaces
 ```
@@ -24,7 +26,7 @@ netmask 255.255.255.0
 gateway 10.0.1.1
 ```
 
-### If neccessary, disable and enable eth0 (static setup on eth0, connected to BS-114)
+#### If neccessary, disable and enable eth0 (static setup on eth0, connected to BS-114)
 
 Disable Interface eth0
 ```
