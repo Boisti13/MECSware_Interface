@@ -24,7 +24,6 @@ cd Desktop
 ```
 git clone https://github.com/Boisti13/MECSware_Interface
 ```
-#### Make the script executable
 ```
 cd Desktop/MECSware_Interface
 ```
@@ -32,6 +31,8 @@ check if repro was cloned
 ```
 ls
 ```
+#### Make the script executable
+
 ```
 chmod +x setup.sh
 ```
