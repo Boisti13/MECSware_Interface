@@ -17,7 +17,7 @@ sudo apt-get install git-all
 ```
 git version
 ```
-### Clone GIT repro
+#### Clone GIT repro
 ```
 cd Desktop
 ```
