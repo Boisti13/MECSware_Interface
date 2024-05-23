@@ -1,4 +1,4 @@
-Interface for MACSware BS-114 system
+# Interface for MACSware BS-114 system
 
 How to setup:
 - make the script executable
