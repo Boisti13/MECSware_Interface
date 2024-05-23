@@ -12,8 +12,19 @@ chmod +x setup.sh
 ```
 ./setup.sh
 ```
+### Setup static IP for interface eth0
+```
+sudo nano /etc/network/interfaces
+```
+add the following
+```
+iface eth0 inet static
+address 10.0.1.11
+netmask 255.255.255.0
+gateway 10.0.1.1
+```
 
-### If neccessary, disable and enable eth0 (static setup, connected to BS-114)
+### If neccessary, disable and enable eth0 (static setup on eth0, connected to BS-114)
 
 Disable Interface eth0
 ```
