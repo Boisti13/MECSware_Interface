@@ -14,7 +14,7 @@ chmod +x setup.sh
 ```
 ./setup.sh
 ```
-#### Setup static IP for interface eth0
+### Setup static IP for interface eth0
 ```
 sudo nano /etc/network/interfaces
 ```
