@@ -6,7 +6,7 @@ Interface to interact with the MACSware BS-114 5G system
 
 ## How to setup:
 
-### Install all neccessary packages
+### Install all necessary packages
 #### Install GIT
 ```
 sudo apt-get update -y && sudo apt-get upgrade -y
