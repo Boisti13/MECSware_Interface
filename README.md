@@ -8,6 +8,7 @@ Interface to interact with the MACSware BS-114 5G system
 
 ### Install all necessary packages
 #### Install GIT
+This step is optional, but needed if the next step thows an error. The shell script will initialise an update and upgrade as well
 ```
 sudo apt-get update -y && sudo apt-get upgrade -y
 ```
