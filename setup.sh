@@ -30,7 +30,7 @@ SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 echo "Creating desktop shortcut..."
 
 # Define the source and destination paths
-SOURCE_FILE="$SCRIPT_DIR/desktop.ini"
+SOURCE_FILE="$SCRIPT_DIR/MECSware_Interface.ini"
 DESTINATION_DIR="/home/pi/Desktop"
 
 # Check if the source file exists
