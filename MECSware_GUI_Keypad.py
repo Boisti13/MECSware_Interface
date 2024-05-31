@@ -101,8 +101,8 @@ def execute_put_command():
             f"-H \"Content-Type: application/json\" -v"
         )
 
-        # Run the command in a subprocess
-        result = subprocess.run(command, shell=True, capture_output=True, text=True)
+        # Run the command in a subprocess with a timeout
+        result = subprocess.run(command, shell=True, capture_output=True, text=True, timeout=30)
         output = result.stdout
 
         # Update the output text widget with the result
@@ -112,8 +112,13 @@ def execute_put_command():
         # Check if the data was received successfully
         if "data received" in output.lower():
             output_text.after(0, output_text.delete, "1.0", tk.END)
+    except subprocess.TimeoutExpired:
+        messagebox.showerror("Error", "No data received within 30 seconds. Operation timed out.")
+        clear_console()  # Clear the internal terminal window
     except Exception as e:
         messagebox.showerror("Error", f"An error occurred: {e}")
+        clear_console()  # Clear the internal terminal window
+
 
 def ping_test():
     """Function to execute a ping test to the provided IP address."""
