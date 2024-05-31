@@ -12,7 +12,7 @@ Interface to interact with the MACSware BS-114 5G system
 sudo apt-get update -y && sudo apt-get upgrade -y
 ```
 ```
-sudo apt-get install git-all
+sudo apt-get install git-all -y
 ```
 ```
 git version
