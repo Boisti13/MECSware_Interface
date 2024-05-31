@@ -63,4 +63,11 @@ def create_custom_combobox(frame, row, column, options, default_value):
 
     combobox_entry.bind("<KeyRelease>", filter_options)
     combobox_entry.bind("<Button-1>", lambda event: open_keypad(combobox_entry))
-    combobox_entry.insert(0, default_value
+    combobox_entry.insert(0, default_value)
+    
+    dropdown_button = ttk.Button(frame, text="▼", command=toggle_dropdown)
+    dropdown_button.grid(row=row, column=column + 1, padx=(0, 10))
+
+    listbox_frame.place_forget()
+
+    return combobox_entry
