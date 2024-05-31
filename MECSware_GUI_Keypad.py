@@ -6,7 +6,7 @@ import threading
 import json
 from PIL import Image, ImageTk
 
-logo_path = "/home/pi/Desktop/MECSware_Interface/logos/logo.png"
+logo_path = "/home/pi/Desktop/MECSware_Interface/logos/wicon_logo.png"
 
 # Global variables to store the retrieved values
 frequency_value = ""
