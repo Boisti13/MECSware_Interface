@@ -6,6 +6,8 @@ import threading
 import json
 from PIL import Image, ImageTk
 
+logo_path = "/home/pi/Desktop/MECSware_Interface/logos/logo.png"
+
 # Global variables to store the retrieved values
 frequency_value = ""
 bandwidth_value = ""
@@ -257,7 +259,7 @@ def create_custom_combobox(row, column, options, default_value):
 
 # Load and display the logo image
 try:
-    image = Image.open("/home/pi/Desktop/MECSware_Interface/logo.png")
+    image = Image.open(logo_path)
     image = image.convert("RGBA")  # Ensure the image has an alpha channel for transparency
     image_resized = image.resize((180, 70), Image.ANTIALIAS)
     logo = ImageTk.PhotoImage(image_resized)
