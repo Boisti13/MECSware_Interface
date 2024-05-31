@@ -39,8 +39,12 @@ root = tk.Tk()
 root.title("MECSware Interface")
 #root.attributes('-fullscreen', True)
 #root.bind("<Escape>", lambda event: root.attributes('-fullscreen', False))  # Press Escape to exit fullscreen
-root.state('zoomed')  # Maximize the window (Windows specific)
-root.attributes('-zoomed', True)  # This can help on Unix systems
+# Get the screen width and height
+screen_width = root.winfo_screenwidth()
+screen_height = root.winfo_screenheight()
+    
+# Set the window size to the screen size
+root.geometry(f"{screen_width}x{screen_height}")
 #root.geometry("800x600")  # Initial size of the window
 
 # Set the theme for the application
