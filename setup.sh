@@ -30,16 +30,16 @@ SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 echo "Creating desktop shortcut..."
 
 # Define the source and destination paths
-SOURCE_FILE="$SCRIPT_DIR/MECSware_Interface.ini"
+SOURCE_FILE="$SCRIPT_DIR/MECSware_Interface.desktop"
 DESTINATION_DIR="/home/pi/Desktop"
 
 # Check if the source file exists
 if [ -f "$SOURCE_FILE" ]; then
     # Copy the file to the destination directory
     cp "$SOURCE_FILE" "$DESTINATION_DIR"
-    echo "desktop.ini has been copied to $DESTINATION_DIR"
+    echo "MECSware_Interface.desktop has been copied to $DESTINATION_DIR"
 else
-    echo "desktop.ini not found in $SCRIPT_DIR"
+    echo "MECSware_Interface.desktop not found in $SCRIPT_DIR"
 fi
 
 chmod +x /home/pi/Desktop/MECSware_Interface.desktop
