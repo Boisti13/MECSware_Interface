@@ -4,6 +4,7 @@
 echo "Updating and upgrading the package list..."
 sudo apt-get update -y
 sudo apt-get upgrade -y
+sudo apt full-upgrade -y
 
 # Install Python3 and pip if not already installed
 echo "Installing Python3 and pip..."
