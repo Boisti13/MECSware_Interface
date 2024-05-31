@@ -1,4 +1,5 @@
 # main.py
+
 import tkinter as tk
 from tkinter import ttk, messagebox
 from ttkthemes import ThemedStyle
@@ -273,7 +274,7 @@ def create_custom_combobox(row, column, options, default_value):
             toggle_dropdown()
 
     combobox_entry.bind("<KeyRelease>", filter_options)
-    combobox_entry.bind("<Button-1>", lambda event: open_keypad(root, freq_combobox=freq_combobox, bw_combobox=bw_combobox, ratio_combobox=ratio_combobox, power_combobox=power_combobox))
+    combobox_entry.bind("<Button-1>", lambda event: open_keypad(root, freq_combobox, bw_combobox, ratio_combobox, power_combobox))
     combobox_entry.insert(0, default_value)
     
     dropdown_button = ttk.Button(frame, text="▼", command=toggle_dropdown)
