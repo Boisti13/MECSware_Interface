@@ -166,8 +166,8 @@ def get_current_data():
         )
 
         show_waiting_message()
-        # Run the command in a subprocess
-        result = subprocess.run(command, shell=True, capture_output=True, text=True)
+        # Run the command in a subprocess with a timeout
+        result = subprocess.run(command, shell=True, capture_output=True, text=True, timeout=30)
         output = result.stdout
 
         # Update the output text widget with the result
@@ -186,8 +186,12 @@ def get_current_data():
         power_label.config(text=f"{power_value}")
 
         messagebox.showinfo("Current Data", f"Frequency: {frequency_value}\nBandwidth: {bandwidth_value}\nPower: {power_value}")
+    except subprocess.TimeoutExpired:
+        messagebox.showerror("Error", "No data received within 30 seconds. Operation timed out.")
     except Exception as e:
         messagebox.showerror("Error", f"An error occurred: {e}")
+
+
 
 def execute_command():
     """Function to execute an arbitrary command."""
