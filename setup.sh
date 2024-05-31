@@ -18,6 +18,10 @@ sudo apt-get install python3-tk -y
 echo "Installing required Python libraries..."
 pip3 install ttkthemes pillow --break-system-packages
 
+# Install imageTK
+echo "Installing imageTK..."
+sudo apt-get install python3-pil python3-pil.imagetk
+
 echo "All necessary libraries and dependencies have been installed."
 
 # Display a message to indicate completion
