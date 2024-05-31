@@ -37,8 +37,9 @@ Entries_bold_font = ('TkDefaultFont', 10, 'bold')
 # Create the main window
 root = tk.Tk()
 root.title("MECSware Interface")
-root.attributes('-fullscreen', True)
-root.bind("<Escape>", lambda event: root.attributes('-fullscreen', False))  # Press Escape to exit fullscreen
+#root.attributes('-fullscreen', True)
+#root.bind("<Escape>", lambda event: root.attributes('-fullscreen', False))  # Press Escape to exit fullscreen
+root.state('zoomed')  # Maximize the window (Windows specific)
 #root.geometry("800x600")  # Initial size of the window
 
 # Set the theme for the application
