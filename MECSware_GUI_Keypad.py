@@ -102,7 +102,7 @@ def execute_put_command():
         )
 
         # Run the command in a subprocess with a timeout
-        result = subprocess.run(command, shell=True, capture_output=True, text=True, timeout=30)
+        result = subprocess.run(command, shell=True, capture_output=True, text=True, """timeout=30""")
         output = result.stdout
 
         # Update the output text widget with the result
@@ -172,7 +172,7 @@ def get_current_data():
 
         show_waiting_message()
         # Run the command in a subprocess with a timeout
-        result = subprocess.run(command, shell=True, capture_output=True, text=True, timeout=30)
+        result = subprocess.run(command, shell=True, capture_output=True, text=True, """timeout=30""")
         output = result.stdout
 
         # Update the output text widget with the result
