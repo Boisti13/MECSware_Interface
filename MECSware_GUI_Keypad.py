@@ -383,7 +383,7 @@ submit_button = ttk.Button(frame, text="Submit Command", command=submit_command)
 submit_button.grid(row=6, column=3, pady=(25, 15), columnspan=2)
 
 # Create a button to open input window
-keypad_button = ttk.Button(frame, text="Keypad", command=lambda: open_keypad(None))
+keypad_button = ttk.Button(frame, text="Keypad", width=width_c-5, command=lambda: open_keypad(None))
 keypad_button.grid(row=6, column=7, pady=(0, 0), columnspan=1)
 
 # Bind the click event to close the window
