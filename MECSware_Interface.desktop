@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=MECSware Interface
+Comment=Launch the MECSware Interface application
+Exec=python3 /home/pi/Desktop/MECSware_Interface/MECSware_Interface_keypad.py
+Icon=/home/pi/Desktop/MECSware_Interface/logos/mecsware_logo.png
+Terminal=false
+Type=Application
+Categories=Utility;Application;
