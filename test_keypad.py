@@ -442,7 +442,7 @@ def open_keypad(entry_widget=None):
     # Add a confirm button
     ttk.Button(keypad_window, text="Confirm", command=confirm_value, width=element_width).grid(row=row_val, column=1, columnspan=1, padx=button_padx, pady=(20, 0), sticky=tk.EW)
     # Add an exit button
-    ttk.Button(keypad_window, text="Exit", command=on_close, width=element_width).grid(row=row_val, column=2, columnspan=1, padx=button_padx, pady=(20, 0), sticky=tk.EW)
+    ttk.Button(keypad_window, text="Exit", command=on_close, width=element_width).grid(row=row_val, column=7, columnspan=1, padx=button_padx, pady=(20, 0), sticky=tk.EW)
 
     # Set the protocol for window close to handle the window tracking variable
     keypad_window.protocol("WM_DELETE_WINDOW", on_close)
