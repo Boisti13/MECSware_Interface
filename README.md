@@ -25,7 +25,7 @@ cd Desktop
 git clone https://github.com/Boisti13/MECSware_Interface
 ```
 ```
-cd Desktop/MECSware_Interface
+cd MECSware_Interface
 ```
 check if repro was cloned
 ```
