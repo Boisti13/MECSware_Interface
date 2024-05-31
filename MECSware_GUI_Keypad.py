@@ -188,8 +188,10 @@ def get_current_data():
         messagebox.showinfo("Current Data", f"Frequency: {frequency_value}\nBandwidth: {bandwidth_value}\nPower: {power_value}")
     except subprocess.TimeoutExpired:
         messagebox.showerror("Error", "No data received within 30 seconds. Operation timed out.")
+        clear_console()  # Clear the internal terminal window
     except Exception as e:
         messagebox.showerror("Error", f"An error occurred: {e}")
+        clear_console()  # Clear the internal terminal window
 
 
 
