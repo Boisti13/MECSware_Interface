@@ -41,10 +41,17 @@ chmod +x setup.sh
 ```
 ./setup.sh
 ```
+### Change display system from Wayland to X11
+```
+sudo raspi-config
+```
+-> Advanced Options -> (A6) Wayland -> (W1) X11 -> reboot
+
 ### Run MECSware GUI
 ```
 python3 MECSware_GUI.py
 ```
+
 
 ### Setup static IP for interface eth0
 Check which interface you want to use to connect the BS-114 system
