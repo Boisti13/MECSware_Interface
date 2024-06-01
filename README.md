@@ -45,7 +45,7 @@ chmod +x setup.sh
 ```
 sudo raspi-config
 ```
--> Advanced Options -> (A6) Wayland -> (W1) X11 -> reboot
+**-> Advanced Options -> (A6) Wayland -> (W1) X11 -> reboot**
 
 ### Run MECSware GUI
 ```
