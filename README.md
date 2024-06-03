@@ -27,7 +27,7 @@ git clone https://github.com/Boisti13/MECSware_Interface
 ```
 or
 ```
-https://gitlab.rhrk.uni-kl.de/kolbgrun/MECSware_Interface
+git clone https://gitlab.rhrk.uni-kl.de/kolbgrun/MECSware_Interface
 ```
 ```
 cd MECSware_Interface
