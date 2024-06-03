@@ -17,11 +17,11 @@ sudo apt-get install python3-tk -y
 
 # Install required Python libraries
 echo "Installing required Python libraries..."
-pip3 install ttkthemes pillow --break-system-packages
+pip3 install ttkthemes pillow --break-system-packages -y
 
 # Install imageTK
 echo "Installing imageTK..."
-sudo apt-get install python3-pil python3-pil.imagetk
+sudo apt-get install python3-pil python3-pil.imagetk -y
 
 echo "All necessary libraries and dependencies have been installed."
 
@@ -43,7 +43,7 @@ else
     echo "MECSware_Interface.desktop not found in $SCRIPT_DIR"
 fi
 
-chmod +x /home/pi/Desktop/MECSware_Interface.desktop
+chmod +x /home/pi/Desktop/MECSware_Interface.desktop -y
 
 # Display a message to indicate completion
 echo "Setup is complete. You can now run your Python script."
