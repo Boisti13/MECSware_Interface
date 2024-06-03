@@ -37,9 +37,10 @@ Entries_bold_font = ('TkDefaultFont', 10, 'bold')
 # Create the main window
 root = tk.Tk()
 root.title("MECSware Interface")
+
 # Setup for fullscreen, keyboard needed to close
-##root.attributes('-fullscreen', True)
-##root.bind("<Escape>", lambda event: root.attributes('-fullscreen', False))  # Press Escape to exit fullscreen
+root.attributes('-fullscreen', True)
+root.bind("<Escape>", lambda event: root.attributes('-fullscreen', False))  # Press Escape to exit fullscreen
 
 # Setup for max window size
 # Get the screen width and height
@@ -47,7 +48,7 @@ screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
     
 # Set the window size to the screen size
-root.geometry(f"{screen_width}x{screen_height}")
+#root.geometry(f"{screen_width}x{screen_height}")
 
 # Setup for specific window size at start
 #root.geometry("800x600")  # Initial size of the window
