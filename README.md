@@ -75,7 +75,7 @@ netmask 255.255.255.0
 gateway 10.0.1.1
 ```
 
-restart network manager
+restart "networking"
 ```
 sudo service networking restart
 ```
