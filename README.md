@@ -75,6 +75,10 @@ netmask 255.255.255.0
 gateway 10.0.1.1
 ```
 
+restart network manager
+```
+sudo service networking restart
+```
 #### If neccessary, disable and enable eth0 (static setup on eth0, connected to BS-114)
 
 Disable Interface eth0
