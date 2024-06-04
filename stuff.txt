@@ -1,0 +1,15 @@
+https://raspberry-projects.com/pi/pi-operating-systems/raspbian/network-settings/routing-table
+
+https://www.cyberciti.biz/faq/howto-linux-configuring-default-route-with-ipcommand/
+
+pi@testpi:~ $ route -n
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         10.0.1.1        0.0.0.0         UG    0      0        0 eth0
+0.0.0.0         192.168.178.1   0.0.0.0         UG    600    0        0 wlan0
+10.0.1.0        0.0.0.0         255.255.255.0   U     0      0        0 eth0
+192.168.178.0   0.0.0.0         255.255.255.0   U     600    0        0 wlan0
+
+sudo route del -net 0.0.0.0 gw 10.0.1.1 netmask 0.0.0.0 dev eth0
+
+ip route show
