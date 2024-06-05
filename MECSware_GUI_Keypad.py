@@ -14,7 +14,7 @@ bandwidth_value = ""
 power_value = ""
 
 # Create a list of options for each combobox
-freq_options = ["3700", "3705", "3710", "3715"]
+freq_options = ["3710", "3720", "3730", "3740", "3750", "3760", "3770", "3780", "3790"]
 bw_options = ["20", "40", "50", "60", "80", "90", "100"]
 ratio_options = ["5:5", "7:3", "4:1"]
 power_options = ["10", "12", "14", "16", "18", "20"]
