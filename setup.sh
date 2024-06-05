@@ -43,7 +43,7 @@ else
     echo "MECSware_Interface.desktop not found in $SCRIPT_DIR"
 fi
 
-chmod +x /home/pi/Desktop/MECSware_Interface.desktop -y
+chmod +x /home/pi/Desktop/MECSware_Interface.desktop
 
 # Display a message to indicate completion
 echo "Setup is complete. You can now run your Python script."
