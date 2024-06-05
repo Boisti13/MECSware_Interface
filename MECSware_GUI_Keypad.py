@@ -26,7 +26,7 @@ name_initial = "BS-114"
 id_initial = "14"
 band_initial = "78"
 freq_initial = "3700"
-bw_initial = "5"
+bw_initial = "20"
 ratio_initial = "5:5"
 power_initial = "10"
 
