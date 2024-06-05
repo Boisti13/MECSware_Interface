@@ -15,7 +15,7 @@ power_value = ""
 
 # Create a list of options for each combobox
 freq_options = ["3700", "3705", "3710", "3715"]
-bw_options = ["5", "10", "15", "20"]
+bw_options = ["20", "40", "50", "60", "80", "90", "100"]
 ratio_options = ["5:5", "7:3", "4:1"]
 power_options = ["10", "12", "14", "16", "18", "20"]
 
