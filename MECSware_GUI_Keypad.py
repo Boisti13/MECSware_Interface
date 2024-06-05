@@ -40,7 +40,8 @@ root.title("MECSware Interface")
 
 # Setup for fullscreen, keyboard needed to close, or click on wicon logo
 root.attributes('-fullscreen', True)
-root.bind("<Escape>", lambda event: root.attributes('-fullscreen', False))  # Press Escape to exit fullscreen
+# Press Escape to exit fullscreen
+root.bind("<Escape>", lambda event: root.attributes('-fullscreen', False))  
 
 # Setup for max window size
 # Get the screen width and height
