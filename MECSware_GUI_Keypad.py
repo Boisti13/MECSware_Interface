@@ -39,9 +39,9 @@ root = tk.Tk()
 root.title("MECSware Interface")
 
 # Setup for fullscreen, keyboard needed to close, or click on wicon logo
-root.attributes('-fullscreen', True)
+#root.attributes('-fullscreen', True)
 # Press Escape to exit fullscreen
-root.bind("<Escape>", lambda event: root.attributes('-fullscreen', False))  
+#root.bind("<Escape>", lambda event: root.attributes('-fullscreen', False))  
 
 # Setup for max window size
 # Get the screen width and height
@@ -49,7 +49,7 @@ screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
     
 # Set the window size to the screen size
-#root.geometry(f"{screen_width}x{screen_height}")
+root.geometry(f"{screen_width}x{screen_height}")
 
 # Setup for specific window size at start
 #root.geometry("800x600")  # Initial size of the window
