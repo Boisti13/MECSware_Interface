@@ -33,7 +33,7 @@ power_initial = "10"
 # Create a style for bold text
 bold_font = ('TkDefaultFont', 20, 'bold')
 Entries_bold_font = ('TkDefaultFont', 18, 'bold')
-standard_font = ('TkDefaultFont', 24)
+standard_font = ('TkDefaultFont', 30)
 
 
 # Create the main window
@@ -397,7 +397,7 @@ submit_button.grid(row=6, column=3, pady=(15, 5), columnspan=2)
 
 # Create a button to open input window
 keypad_button = ttk.Button(frame, text="Keypad", width=width_c, command=lambda: open_keypad(None), style='Standard.TButton')
-keypad_button.grid(row=6, column=7, pady=(5), padx=(10, 10), columnspan=1, sticky=tk.W)
+keypad_button.grid(row=6, column=7, pady=(15, 5), columnspan=1, sticky=tk.W)
 
 # Bind the click event to close the window
 logo_label.bind("<Button-1>", lambda event: root.destroy())
