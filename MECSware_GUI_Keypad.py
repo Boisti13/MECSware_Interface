@@ -69,6 +69,10 @@ frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
 for i in range(8):
     frame.columnconfigure(i, weight=1)
 
+# Set minimum height for all rows to make them taller
+for i in range(8):
+    frame.grid_rowconfigure(i, minsize=50)  # Adjust the value as needed
+
 # Functions
 
 def clear_console():
