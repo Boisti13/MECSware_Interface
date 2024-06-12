@@ -33,7 +33,8 @@ power_initial = "10"
 # Create a style for bold text
 bold_font = ('TkDefaultFont', 20, 'bold')
 Entries_bold_font = ('TkDefaultFont', 18, 'bold')
-standard_font = ('TkDefaultFont', 30)
+standard_font = ('TkDefaultFont', 18)
+button_font = ('TkDefaultFont', 25)
 
 
 # Create the main window
@@ -60,7 +61,7 @@ root.geometry(f"{screen_width}x{screen_height}")
 style = ThemedStyle(root)
 style.set_theme("adapta")  # Replace "adapta" with your desired theme
 # Create style for buttons
-style.configure('Standard.TButton', font=standard_font)
+style.configure('Standard.TButton', font=button_font)
 
 
 # Configure the main grid to be resizable
