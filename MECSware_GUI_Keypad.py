@@ -290,7 +290,7 @@ def create_custom_combobox(row, column, options, default_value):
 try:
     image = Image.open(logo_path)
     image = image.convert("RGBA")  # Ensure the image has an alpha channel for transparency
-    image_resized = image.resize((180, 70), Image.ANTIALIAS)
+    image_resized = image.resize((200, 90), Image.ANTIALIAS)
     logo = ImageTk.PhotoImage(image_resized)
     logo_label = tk.Label(frame, image=logo, bg="ghost white")
     logo_label.grid(row=0, column=6, rowspan=2, columnspan=2)  # Adjust the position as needed
