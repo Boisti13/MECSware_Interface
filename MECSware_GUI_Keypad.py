@@ -71,7 +71,7 @@ for i in range(8):
 
 # Set minimum height for all rows to make them taller
 for i in range(8):
-    frame.grid_rowconfigure(i, minsize=50)  # Adjust the value as needed
+    frame.grid_rowconfigure(i, minsize=100)  # Adjust the value as needed
 
 # Functions
 
