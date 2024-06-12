@@ -33,7 +33,7 @@ power_initial = "10"
 # Create a style for bold text
 bold_font = ('TkDefaultFont', 20, 'bold')
 Entries_bold_font = ('TkDefaultFont', 18, 'bold')
-standard_font = ('TkDefaultFont', 19)
+standard_font = ('TkDefaultFont', 24)
 
 
 # Create the main window
