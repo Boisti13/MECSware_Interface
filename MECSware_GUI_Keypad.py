@@ -246,7 +246,7 @@ def create_custom_combobox(row, column, options, default_value):
     #scrollbar = ttk.Scrollbar(listbox_frame, orient=tk.VERTICAL, command=listbox.yview)
     #listbox.config(yscrollcommand=scrollbar.set)
 
-    scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+    #scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
     listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
     # Populate the listbox with options
