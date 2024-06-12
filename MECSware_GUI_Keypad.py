@@ -31,9 +31,9 @@ ratio_initial = "5:5"
 power_initial = "10"
 
 # Create a style for bold text
-bold_font = ('TkDefaultFont', 12, 'bold')
-Entries_bold_font = ('TkDefaultFont', 10, 'bold')
-standard_font = ('TkDefaultFont', 14)
+bold_font = ('TkDefaultFont', 20, 'bold')
+Entries_bold_font = ('TkDefaultFont', 18, 'bold')
+standard_font = ('TkDefaultFont', 18)
 
 # Create the main window
 root = tk.Tk()
@@ -325,9 +325,9 @@ ip_entry = ttk.Entry(frame, width=width_c, justify='center', font = standard_fon
 ip_entry.insert(0, ip_initial)
 ip_entry.grid(row=0, column=1, columnspan=1)
 
-port_label = ttk.Label(frame, text="Port:", width=width_c, anchor=tk.E)
+port_label = ttk.Label(frame, text="Port:", width=width_c, anchor=tk.E, font = standard_font)
 port_label.grid(row=0, column=2)
-port_entry = ttk.Entry(frame, width=width_c, justify='center')
+port_entry = ttk.Entry(frame, width=width_c, justify='center', font = standard_font)
 port_entry.insert(0, port_initial)
 port_entry.grid(row=0, column=3, columnspan=1)
 
@@ -376,19 +376,19 @@ power_label = ttk.Label(frame, text="", width=width_c, anchor=tk.W, justify='cen
 power_label.grid(row=5, column=1, pady=5)
 
 # Create a button to test the connection
-test_button = ttk.Button(frame, text="Test Connection", command=ping_command)
+test_button = ttk.Button(frame, text="Test Connection", command=ping_command, font = standard_font)
 test_button.grid(row=0, column=4, pady=5, columnspan=2, sticky=tk.W)
 
 # Create a button to get current data
-get_data_button = ttk.Button(frame, text="Get Current Data", command=get_current_data)
+get_data_button = ttk.Button(frame, text="Get Current Data", command=get_current_data, font = standard_font)
 get_data_button.grid(row=6, column=1, pady=(25,15), columnspan=2)
 
 # Create a button to submit the command
-submit_button = ttk.Button(frame, text="Submit Command", command=submit_command)
+submit_button = ttk.Button(frame, text="Submit Command", command=submit_command, font = standard_font)
 submit_button.grid(row=6, column=3, pady=(25, 15), columnspan=2)
 
 # Create a button to open input window
-keypad_button = ttk.Button(frame, text="Keypad", width=width_c-5, command=lambda: open_keypad(None))
+keypad_button = ttk.Button(frame, text="Keypad", width=width_c-5, command=lambda: open_keypad(None), font = standard_font)
 keypad_button.grid(row=6, column=7, pady=(0, 0), columnspan=1, sticky=tk.W)
 
 # Bind the click event to close the window
