@@ -376,19 +376,19 @@ power_label = ttk.Label(frame, text="", width=width_c, anchor=tk.W, justify='cen
 power_label.grid(row=5, column=1, pady=5)
 
 # Create a button to test the connection
-test_button = ttk.Button(frame, text="Test Connection", command=ping_command, font = standard_font)
+test_button = ttk.Button(frame, text="Test Connection", command=ping_command)
 test_button.grid(row=0, column=4, pady=5, columnspan=2, sticky=tk.W)
 
 # Create a button to get current data
-get_data_button = ttk.Button(frame, text="Get Current Data", command=get_current_data, font = standard_font)
+get_data_button = ttk.Button(frame, text="Get Current Data", command=get_current_data)
 get_data_button.grid(row=6, column=1, pady=(25,15), columnspan=2)
 
 # Create a button to submit the command
-submit_button = ttk.Button(frame, text="Submit Command", command=submit_command, font = standard_font)
+submit_button = ttk.Button(frame, text="Submit Command", command=submit_command)
 submit_button.grid(row=6, column=3, pady=(25, 15), columnspan=2)
 
 # Create a button to open input window
-keypad_button = ttk.Button(frame, text="Keypad", width=width_c-5, command=lambda: open_keypad(None), font = standard_font)
+keypad_button = ttk.Button(frame, text="Keypad", width=width_c-5, command=lambda: open_keypad(None))
 keypad_button.grid(row=6, column=7, pady=(0, 0), columnspan=1, sticky=tk.W)
 
 # Bind the click event to close the window
