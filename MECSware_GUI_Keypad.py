@@ -44,7 +44,7 @@ root = tk.Tk()
 root.title("MECSware Interface")
 
 # Change the background color of the main window
-root.config(background='ghost white')  # Set your desired background color
+root.config(background='light blue')  # Set your desired background color
 
 # Setup for fullscreen, keyboard needed to close, or click on wicon logo
 #root.attributes('-fullscreen', True)
