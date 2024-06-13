@@ -329,10 +329,10 @@ width_c = 15
 
 # Create labels and entry fields for Name, ID, and Band
 name_label = ttk.Label(frame, text="Name:", width=width_c-5, anchor=tk.E, font = standard_font)
-name_label.grid(row=3, column=5)
+name_label.grid(row=4, column=5)
 name_entry = ttk.Entry(frame, width=width_c-5, font = standard_font)
 name_entry.insert(0, name_initial)
-name_entry.grid(row=3, column=6, sticky=tk.W)
+name_entry.grid(row=4, column=6, sticky=tk.W)
 
 id_label = ttk.Label(frame, text="ID:", width=width_c-5, anchor=tk.E, font = standard_font)
 id_label.grid(row=5, column=5)
@@ -344,7 +344,7 @@ band_label = ttk.Label(frame, text="Band:", width=width_c-5, anchor=tk.E, font =
 band_label.grid(row=5, column=7)
 band_entry = ttk.Entry(frame, width=width_c-10, font = standard_font)
 band_entry.insert(0, band_initial)
-band_entry.grid(row=5, column=8, sticky=tk.W)
+band_entry.grid(row=5, column=8, sticky=tk.W, padx=(0,100))
 
 # Create labels and entry fields for IP Address and Port
 ip_label = ttk.Label(frame, text="IP Address:", width=width_c, anchor=tk.E, font = standard_font)
