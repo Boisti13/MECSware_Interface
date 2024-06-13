@@ -357,7 +357,7 @@ port_label = ttk.Label(frame, text="Port:", width=width_c, anchor=tk.E, font = s
 port_label.grid(row=0, column=2)
 port_entry = ttk.Entry(frame, width=width_c, justify='center', font = standard_font)
 port_entry.insert(0, port_initial)
-port_entry.grid(row=0, column=3, columnspan=1, padx=(10, 40))
+port_entry.grid(row=0, column=3, columnspan=1, width=width_c-5, padx=(10, 40))
 
 # Create labels for current and desired settings
 x_spacing = 50
