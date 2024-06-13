@@ -8,6 +8,7 @@ from PIL import Image, ImageTk
 
 wicon_logo_path = "/home/pi/Desktop/MECSware_Interface/logos/wicon_logo.png"
 campus_6g_logo_path = "/home/pi/Desktop/MECSware_Interface/logos/6G_Campus.png"
+campus_6g_logo_path = "/home/pi/Desktop/MECSware_Interface/logos/wicon_6g_campus_logo.png"
 
 # Global variables to store the retrieved values
 frequency_value = ""
@@ -308,7 +309,7 @@ def resize_image(event):
 
 # Load and display the logo image
 try:
-    original_image = Image.open(wicon_logo_path)
+    original_image = Image.open(wicon_6g_campus_logo)
     original_image = original_image.convert("RGBA")  # Ensure the image has an alpha channel for transparency
     aspect_ratio = original_image.height / original_image.width
     initial_width = 400
@@ -319,20 +320,6 @@ try:
     logo_label.grid(row=0, column=6, rowspan=2, columnspan=2)  # Adjust the position as needed
 except Exception as e:
     messagebox.showerror("Error", f"Unable to load image: {e}")
-
-# Load and display the 6g campus logo image
-try:
-    campus_logo_image = Image.open(campus_6g_logo_path)
-    campus_logo_image = campus_logo_image.convert("RGBA")
-    campus_aspect_ratio = campus_logo_image.height / campus_logo_image.width
-    campus_initial_width = 400
-    campus_initial_height = int(campus_initial_width * campus_aspect_ratio)
-    resized_campus_image = campus_logo_image.resize((campus_initial_width, campus_initial_height), Image.ANTIALIAS)
-    campus_logo = ImageTk.PhotoImage(resized_campus_image)
-    campus_logo_label = tk.Label(frame, image=campus_logo, bg="ghost white")
-    campus_logo_label.grid(row=1, column=6, rowspan=2, columnspan=2)  # Adjust the position as needed
-except Exception as e:
-    messagebox.showerror("Error", f"Unable to load campus logo image: {e}")
 
 width_c = 15
 
