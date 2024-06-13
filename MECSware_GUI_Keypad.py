@@ -362,7 +362,7 @@ port_entry.grid(row=0, column=3, columnspan=1)
 x_spacing = 10
 y_spacing = 20
 
-current_settings_label = ttk.Label(frame, text="Current Settings", width=width_c, anchor=tk.CENTER, font=bold_font)
+current_settings_label = ttk.Label(frame, text="Current Settings", width=width_c-5, anchor=tk.CENTER, font=bold_font)
 current_settings_label.grid(row=1, column=1, columnspan=2, pady=y_spacing, padx=x_spacing)
 
 desired_settings_label = ttk.Label(frame, text="Desired Settings", width=width_c, anchor=tk.CENTER, font=bold_font)
