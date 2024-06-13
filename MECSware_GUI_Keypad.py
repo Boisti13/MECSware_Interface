@@ -249,60 +249,93 @@ def create_custom_combobox(row, column, options, default_value):
     combobox_entry = ttk.Entry(frame, justify='right', font=standard_font, width=10)
     combobox_entry.grid(row=row, column=column, padx=10, pady=10)
 
-    # Create a Listbox to act as the dropdown list with a scrollbar
-    listbox_frame = tk.Frame(frame)
-    listbox = tk.Listbox(listbox_frame, font=('TkDefaultFont', 20), width=20)
-    scrollbar = ttk.Scrollbar(listbox_frame, orient=tk.VERTICAL, command=listbox.yview)
-    listbox.config(yscrollcommand=scrollbar.set)
-
-    scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
-    listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
-
-    # Populate the listbox with options
-    for option in options:
-        # Center-align text by adding spaces
-        listbox.insert(tk.END, f'{option:^20}')
-
-    def select_item(event):
-        """Function to handle item selection"""
-        selection = listbox.curselection()
-        if selection:
-            selected_item = listbox.get(selection).strip()
-            combobox_entry.delete(0, tk.END)
-            combobox_entry.insert(0, selected_item)
-            listbox_frame.place_forget()
-
-    # Bind the selection event to the Listbox
-    listbox.bind("<<ListboxSelect>>", select_item)
-
-    def toggle_dropdown(event=None):
-        """Function to show/hide the dropdown list"""
-        close_open_lists(None)
-        if not listbox_frame.winfo_ismapped():
-            listbox_frame.place(x=combobox_entry.winfo_x(), y=combobox_entry.winfo_y() + combobox_entry.winfo_height())
-            listbox_frame.lift()
-
-    def filter_options(event):
-        """Function to filter options based on entry text"""
-        typed = combobox_entry.get()
-        listbox.delete(0, tk.END)
+# Function to display the dropdown list
+    def show_dropdown(event=None):
+        # Close any open listboxes
+        close_open_lists(event)
+        
+        # Create a new toplevel window to act as the dropdown
+        dropdown_window = tk.Toplevel(parent)
+        dropdown_window.wm_overrideredirect(True)
+        
+        x = combobox_entry.winfo_rootx()
+        y = combobox_entry.winfo_rooty() + combobox_entry.winfo_height()
+        dropdown_window.geometry(f"+{x}+{y}")
+        
+        # Create a Listbox to act as the dropdown list
+        listbox = tk.Listbox(dropdown_window, font=('TkDefaultFont', 12), width=combobox_entry.winfo_width(), height=len(options))
+        
+        # Populate the listbox with options
         for option in options:
-            if typed.lower() in option.lower():
-                # Center-align text by adding spaces
-                listbox.insert(tk.END, f'{option:^20}')
-        if listbox.size() > 0:
-            toggle_dropdown()
+            listbox.insert(tk.END, option)
 
-    combobox_entry.bind("<KeyRelease>", filter_options)
-    combobox_entry.bind("<Button-1>", lambda event: open_keypad(combobox_entry))
+        # Function to handle item selection
+        def on_select(event):
+            selection = listbox.curselection()
+            if selection:
+                selected_item = listbox.get(selection)
+                combobox_entry.delete(0, tk.END)
+                combobox_entry.insert(0, selected_item)
+                dropdown_window.destroy()
+        
+        listbox.bind("<<ListboxSelect>>", on_select)
+        listbox.pack()
+
+    combobox_entry.bind("<Button-1>", show_dropdown)
     combobox_entry.insert(0, default_value)
     
-    dropdown_button = ttk.Button(frame, text="▼", command=toggle_dropdown, width=5, style='Standard.TButton')
-    dropdown_button.grid(row=row, column=column + 1, padx=(0, 10))
-
-    listbox_frame.place_forget()
-
     return combobox_entry
+
+    # Create a Listbox to act as the dropdown list with a scrollbar
+#    listbox_frame = tk.Frame(frame)
+#    listbox = tk.Listbox(listbox_frame, font=('TkDefaultFont', 20), width=20)
+#    listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+    # Populate the listbox with options
+#    for option in options:
+        # Center-align text by adding spaces
+#        listbox.insert(tk.END, f'{option:^20}')
+
+#    def select_item(event):
+#        """Function to handle item selection"""
+#        selection = listbox.curselection()
+#        if selection:
+#            selected_item = listbox.get(selection).strip()
+#            combobox_entry.delete(0, tk.END)
+#            combobox_entry.insert(0, selected_item)
+#            listbox_frame.place_forget()
+
+    # Bind the selection event to the Listbox
+#    listbox.bind("<<ListboxSelect>>", select_item)
+
+#    def toggle_dropdown(event=None):
+#        """Function to show/hide the dropdown list"""
+#        close_open_lists(None)
+#        if not listbox_frame.winfo_ismapped():
+#            listbox_frame.place(x=combobox_entry.winfo_x(), y=combobox_entry.winfo_y() + combobox_entry.winfo_height())
+#            listbox_frame.lift()
+
+#    def filter_options(event):
+ #       """Function to filter options based on entry text"""
+ #       typed = combobox_entry.get()
+ #       listbox.delete(0, tk.END)
+ #       for option in options:
+ #           if typed.lower() in option.lower():
+                # Center-align text by adding spaces
+  #              listbox.insert(tk.END, f'{option:^20}')
+   #     if listbox.size() > 0:
+    #        toggle_dropdown()
+
+#    combobox_entry.bind("<KeyRelease>", filter_options)
+#    combobox_entry.bind("<Button-1>", lambda event: open_keypad(combobox_entry))
+#    combobox_entry.insert(0, default_value)
+    
+#    dropdown_button = ttk.Button(frame, text="▼", command=toggle_dropdown, width=5, style='Standard.TButton')
+#    dropdown_button.grid(row=row, column=column + 1, padx=(0, 10))
+
+#    listbox_frame.place_forget()
+
+#    return combobox_entry
 
 
 # Function to resize the image
