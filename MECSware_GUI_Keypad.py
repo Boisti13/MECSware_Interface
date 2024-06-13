@@ -38,6 +38,7 @@ bold_font = ('TkDefaultFont', 20, 'bold')
 Entries_bold_font = ('TkDefaultFont', 18, 'bold')
 standard_font = ('TkDefaultFont', 18)
 button_font = ('TkDefaultFont', 25)
+mini_button_font = ('TkDefaultFont', 15)
 
 
 # Create the main window
@@ -70,7 +71,7 @@ style.configure('TLabel', background='ghost white')
 
 # Create style for buttons
 style.configure('Standard.TButton', font=button_font)
-
+style.configure('Mini.TButton', font=mini_button_font)
 
 # Configure the main grid to be resizable
 root.grid_rowconfigure(0, weight=1)
@@ -403,7 +404,7 @@ power_label = ttk.Label(frame, text="", width=width_c-10, anchor=tk.W, justify='
 power_label.grid(row=5, column=1, pady=5)
 
 # Create a button to test the connection
-test_button = ttk.Button(frame, text="Test Connection", command=ping_command, style='Standard.TButton')
+test_button = ttk.Button(frame, text="Test Connection", command=ping_command, style='Mini.TButton')
 test_button.grid(row=0, column=4, pady=5, columnspan=2, sticky=tk.W)
 
 # Create a button to get current data
