@@ -479,6 +479,9 @@ def open_keypad(entry_widget=None):
         elif target == "Power":
             power_combobox.delete(0, tk.END)
             power_combobox.insert(tk.END, value)
+        elif target == "Port":
+            power_combobox.delete(0, tk.END)
+            power_combobox.insert(tk.END, value)
         on_close()
 
     def on_close():
