@@ -310,7 +310,7 @@ try:
     original_image = Image.open(logo_path)
     original_image = original_image.convert("RGBA")  # Ensure the image has an alpha channel for transparency
     aspect_ratio = original_image.height / original_image.width
-    initial_width = 200
+    initial_width = 400
     initial_height = int(initial_width * aspect_ratio)
     resized_image = original_image.resize((initial_width, initial_height), Image.ANTIALIAS)
     logo = ImageTk.PhotoImage(resized_image)
