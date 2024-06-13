@@ -325,12 +325,12 @@ try:
     campus_logo_image = Image.open(campus_6g_logo_path)
     campus_logo_image = campus_logo_image.convert("RGBA")
     campus_aspect_ratio = campus_logo_image.height / campus_logo_image.width
-    campus_initial_width = 200
+    campus_initial_width = 400
     campus_initial_height = int(campus_initial_width * campus_aspect_ratio)
     resized_campus_image = campus_logo_image.resize((campus_initial_width, campus_initial_height), Image.ANTIALIAS)
     campus_logo = ImageTk.PhotoImage(resized_campus_image)
     campus_logo_label = tk.Label(frame, image=campus_logo, bg="ghost white")
-    campus_logo_label.grid(row=2, column=6, rowspan=2, columnspan=2)  # Adjust the position as needed
+    campus_logo_label.grid(row=1, column=6, rowspan=2, columnspan=2)  # Adjust the position as needed
 except Exception as e:
     messagebox.showerror("Error", f"Unable to load campus logo image: {e}")
 
