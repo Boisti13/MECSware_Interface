@@ -405,7 +405,7 @@ power_label.grid(row=5, column=1, pady=5)
 
 # Create a button to test the connection
 test_button = ttk.Button(frame, text="Test Connection", command=ping_command, style='Mini.TButton')
-test_button.grid(row=0, column=4, pady=5, columnspan=2, sticky=tk.W, padx=(20, 20))
+test_button.grid(row=0, column=4, pady=5, columnspan=2, sticky=tk.W, padx=(50, 20))
 
 # Create a button to get current data
 get_data_button = ttk.Button(frame, text="Get Data", command=get_current_data, style='Standard.TButton')
