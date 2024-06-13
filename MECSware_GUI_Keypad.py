@@ -370,22 +370,22 @@ desired_settings_label = ttk.Label(frame, text="Desired Settings", width=width_c
 desired_settings_label.grid(row=1, column=3, columnspan=2, pady=y_spacing, padx=x_spacing)
 
 freq_label = ttk.Label(frame, text="[MHz]", width=width_c-10, anchor=tk.W, font=Entries_bold_font)
-freq_label.grid(row=2, column=5, pady=(5), sticky=tk.W)
+freq_label.grid(row=2, column=4, pady=(5), sticky=tk.W)
 
 bw_label = ttk.Label(frame, text="[MHz]", width=width_c-10, anchor=tk.W, font=Entries_bold_font)
-bw_label.grid(row=3, column=5, pady=(10,0), sticky=tk.W)
+bw_label.grid(row=3, column=4, pady=(10,0), sticky=tk.W)
 
 ratio_label = ttk.Label(frame, text="Ratio:", width=width_c, anchor=tk.E, font=Entries_bold_font)
 ratio_label.grid(row=4, column=0)
 
 power_label = ttk.Label(frame, text="[dBm]", width=width_c-10, anchor=tk.W, font=Entries_bold_font)
-power_label.grid(row=5, column=5, pady=(10,0), sticky=tk.W)
+power_label.grid(row=5, column=4, pady=(10,0), sticky=tk.W)
 
 # Create custom comboboxes for frequency, bandwidth, ratio, and power
-freq_combobox = create_custom_combobox(row=2, column=3, options=freq_options, default_value=freq_initial)
-bw_combobox = create_custom_combobox(row=3, column=3, options=bw_options, default_value=bw_initial)
-ratio_combobox = create_custom_combobox(row=4, column=3, options=ratio_options, default_value=ratio_initial)
-power_combobox = create_custom_combobox(row=5, column=3, options=power_options, default_value=power_initial)
+freq_combobox = create_custom_combobox(row=2, column=2, options=freq_options, default_value=freq_initial)
+bw_combobox = create_custom_combobox(row=3, column=2, options=bw_options, default_value=bw_initial)
+ratio_combobox = create_custom_combobox(row=4, column=2, options=ratio_options, default_value=ratio_initial)
+power_combobox = create_custom_combobox(row=5, column=2, options=power_options, default_value=power_initial)
 
 # Create labels to display the current settings
 current_freq_label = ttk.Label(frame, text="Frequency:", width=width_c, anchor=tk.E, font=Entries_bold_font)
@@ -413,7 +413,7 @@ get_data_button.grid(row=6, column=1, pady=(15,5), columnspan=1)
 
 # Create a button to submit the command
 submit_button = ttk.Button(frame, text="Submit Command", command=submit_command, style='Standard.TButton')
-submit_button.grid(row=6, column=3, pady=(15, 5), columnspan=2)
+submit_button.grid(row=6, column=2, pady=(15, 5), columnspan=2)
 
 # Create a button to open input window
 keypad_button = ttk.Button(frame, text="Keypad", width=width_c-6, command=lambda: open_keypad(None), style='Mini.TButton')
