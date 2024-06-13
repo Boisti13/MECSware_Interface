@@ -8,7 +8,7 @@ from PIL import Image, ImageTk
 
 wicon_logo_path = "/home/pi/Desktop/MECSware_Interface/logos/wicon_logo.png"
 campus_6g_logo_path = "/home/pi/Desktop/MECSware_Interface/logos/6G_Campus.png"
-campus_6g_logo_path = "/home/pi/Desktop/MECSware_Interface/logos/wicon_6g_campus_logo.png"
+wicon_6g_logo_path = "/home/pi/Desktop/MECSware_Interface/logos/wicon_6g_campus_logo.png"
 
 # Global variables to store the retrieved values
 frequency_value = ""
