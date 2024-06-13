@@ -9,6 +9,7 @@ from PIL import Image, ImageTk
 wicon_logo_path = "/home/pi/Desktop/MECSware_Interface/logos/wicon_logo.png"
 campus_6g_logo_path = "/home/pi/Desktop/MECSware_Interface/logos/6G_Campus.png"
 wicon_6g_logo_path = "/home/pi/Desktop/MECSware_Interface/logos/wicon_6g_campus_logo.png"
+logo_path = "/home/pi/Desktop/MECSware_Interface/logos/rptu_wicon_6g_campus_logo.png"
 
 # Global variables to store the retrieved values
 frequency_value = ""
@@ -116,7 +117,7 @@ def execute_put_command():
         # Construct the command to be executed
         command = (
             f"curl -X PUT https://{ip_address}:{port}/5g/bs/conf -k -u admin:admin -d "
-            f"'{{\"Name\": \"BS-114\", \"ID\": \"14\", \"Band\": \"78\", \"Bandwidth\": \"{bandwidth}\", "
+            f"'{{\"Name\": \"BS-114\", \"ID\": \"{id_initial}\", \"Band\": \"78\", \"Bandwidth\": \"{bandwidth}\", "
             f"\"Frequency\": \"{frequency}\", \"Ratio\": \"{ratio}\", \"Power\": \"{power}\", \"Sync\": \"free\"}}' "
             f"-H \"Content-Type: application/json\" -v"
         )
@@ -315,7 +316,7 @@ def resize_image(event):
 
 # Load and display the logo image
 try:
-    original_image = Image.open(wicon_6g_logo_path)
+    original_image = Image.open(logo_path)
     original_image = original_image.convert("RGBA")  # Ensure the image has an alpha channel for transparency
     aspect_ratio = original_image.height / original_image.width
     initial_width = 400
