@@ -245,7 +245,7 @@ root.bind("<Button-1>", close_open_lists)
 # Create a function to set up a custom combobox
 def create_custom_combobox(row, column, options, default_value):
     # Create a combobox-like entry widget
-    combobox_entry = ttk.Entry(frame, justify='right', font=standard_font)
+    combobox_entry = ttk.Entry(frame, justify='right', font=standard_font, width=20)
     combobox_entry.grid(row=row, column=column, padx=10, pady=10)
 
     # Create a Listbox to act as the dropdown list with a scrollbar
