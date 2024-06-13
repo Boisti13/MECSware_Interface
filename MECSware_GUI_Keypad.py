@@ -367,7 +367,7 @@ current_settings_label = ttk.Label(frame, text="Current Settings", width=width_c
 current_settings_label.grid(row=1, column=1, columnspan=1, pady=y_spacing, padx=x_spacing)
 
 desired_settings_label = ttk.Label(frame, text="Desired Settings", width=width_c, anchor=tk.CENTER, font=bold_font)
-desired_settings_label.grid(row=1, column=2, columnspan=2, pady=y_spacing, sticky=tk.NSEW)
+desired_settings_label.grid(row=1, column=2, columnspan=2, pady=y_spacing, padx=(100, 0))
 
 freq_label = ttk.Label(frame, text="[MHz]", width=width_c-8, anchor=tk.W, font=Entries_bold_font)
 freq_label.grid(row=2, column=4, pady=(5), padx=(0, 50), sticky=tk.W)
