@@ -76,6 +76,7 @@ root.grid_columnconfigure(0, weight=1)
 # Create the main frame with padding
 frame = ttk.Frame(root, padding="20")
 frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+frame.config(style='TFrame')  # Set style to ensure consistency
 for i in range(8):
     frame.columnconfigure(i, weight=1)
 
