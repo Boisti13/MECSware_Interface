@@ -89,3 +89,6 @@ Enable Interface eth0
 ```
 sudo ifconfig eth0 up
 ```
+```
+pkill -9 -f MECSware_GUI_Keypad.py
+```
