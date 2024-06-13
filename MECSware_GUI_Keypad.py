@@ -43,9 +43,6 @@ button_font = ('TkDefaultFont', 25)
 root = tk.Tk()
 root.title("MECSware Interface")
 
-# Change the background color of the main window
-#root.config(background='ghost white')  # Set your desired background color
-
 # Setup for fullscreen, keyboard needed to close, or click on wicon logo
 #root.attributes('-fullscreen', True)
 # Press Escape to exit fullscreen
