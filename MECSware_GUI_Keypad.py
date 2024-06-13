@@ -296,7 +296,7 @@ def create_custom_combobox(row, column, options, default_value):
     combobox_entry.insert(0, default_value)
     
     dropdown_button = ttk.Button(frame, text="▼", command=toggle_dropdown, width=5, style='Standard.TButton')
-    dropdown_button.grid(row=row, column=column + 1, padx=(0, 50))
+    dropdown_button.grid(row=row, column=column + 1, padx=(0, 150))
 
     listbox_frame.place_forget()
 
