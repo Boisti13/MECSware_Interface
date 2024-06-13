@@ -364,7 +364,7 @@ x_spacing = 0
 y_spacing = 20
 
 current_settings_label = ttk.Label(frame, text="Current Settings", width=width_c, anchor=tk.CENTER, font=bold_font)
-current_settings_label.grid(row=1, column=1, columnspan=2, pady=y_spacing, padx=x_spacing)
+current_settings_label.grid(row=1, column=1, columnspan=1, pady=y_spacing, padx=x_spacing)
 
 desired_settings_label = ttk.Label(frame, text="Desired Settings", width=width_c, anchor=tk.CENTER, font=bold_font)
 desired_settings_label.grid(row=1, column=3, columnspan=2, pady=y_spacing, padx=x_spacing)
@@ -408,8 +408,8 @@ test_button = ttk.Button(frame, text="Test Connection", command=ping_command, st
 test_button.grid(row=0, column=4, pady=5, columnspan=2, sticky=tk.W)
 
 # Create a button to get current data
-get_data_button = ttk.Button(frame, text="Get Current Data", command=get_current_data, style='Standard.TButton')
-get_data_button.grid(row=6, column=1, pady=(15,5), columnspan=2)
+get_data_button = ttk.Button(frame, text="Get Data", command=get_current_data, style='Standard.TButton')
+get_data_button.grid(row=6, column=1, pady=(15,5), columnspan=1)
 
 # Create a button to submit the command
 submit_button = ttk.Button(frame, text="Submit Command", command=submit_command, style='Standard.TButton')
