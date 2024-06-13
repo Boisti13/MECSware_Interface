@@ -351,7 +351,7 @@ ip_label = ttk.Label(frame, text="IP Address:", width=width_c, anchor=tk.E, font
 ip_label.grid(row=0, column=0, columnspan=1)
 ip_entry = ttk.Entry(frame, width=width_c-5, justify='center', font = standard_font)
 ip_entry.insert(0, ip_initial)
-ip_entry.grid(row=0, column=1, columnspan=1, padx=(0, 200))
+ip_entry.grid(row=0, column=1, columnspan=1, padx=(0, 150))
 
 port_label = ttk.Label(frame, text="Port:", width=width_c, anchor=tk.E, font = standard_font)
 port_label.grid(row=0, column=2)
