@@ -309,7 +309,7 @@ def resize_image(event):
 
 # Load and display the logo image
 try:
-    original_image = Image.open(wicon_6g_campus_logo)
+    original_image = Image.open(wicon_6g_logo_path)
     original_image = original_image.convert("RGBA")  # Ensure the image has an alpha channel for transparency
     aspect_ratio = original_image.height / original_image.width
     initial_width = 400
