@@ -296,7 +296,7 @@ def create_custom_combobox(row, column, options, default_value):
     combobox_entry.insert(0, default_value)
     
     dropdown_button = ttk.Button(frame, text="▼", command=toggle_dropdown, width=5, style='Standard.TButton')
-    dropdown_button.grid(row=row, column=column + 1, padx=(0, 0))
+    dropdown_button.grid(row=row, column=column + 1, padx=(0, 50))
 
     listbox_frame.place_forget()
 
@@ -367,7 +367,7 @@ current_settings_label = ttk.Label(frame, text="Current Settings", width=width_c
 current_settings_label.grid(row=1, column=1, columnspan=1, pady=y_spacing, padx=x_spacing)
 
 desired_settings_label = ttk.Label(frame, text="Desired Settings", width=width_c, anchor=tk.CENTER, font=bold_font)
-desired_settings_label.grid(row=1, column=3, columnspan=2, pady=y_spacing, padx=x_spacing)
+desired_settings_label.grid(row=1, column=2, columnspan=2, pady=y_spacing, padx=x_spacing)
 
 freq_label = ttk.Label(frame, text="[MHz]", width=width_c-10, anchor=tk.W, font=Entries_bold_font)
 freq_label.grid(row=2, column=4, pady=(5), sticky=tk.W)
