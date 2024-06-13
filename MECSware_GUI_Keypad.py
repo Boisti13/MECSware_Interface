@@ -379,7 +379,7 @@ ratio_label = ttk.Label(frame, text="Ratio:", width=width_c, anchor=tk.E, font=E
 ratio_label.grid(row=4, column=0)
 
 power_label = ttk.Label(frame, text="[dBm]", width=width_c-10, anchor=tk.W, font=Entries_bold_font)
-power_label.grid(row=5, column=4, pady=(10,0), padx=(0, 300), sticky=tk.W)
+power_label.grid(row=5, column=4, pady=(10,0), padx=(0, 150), sticky=tk.W)
 
 # Create custom comboboxes for frequency, bandwidth, ratio, and power
 freq_combobox = create_custom_combobox(row=2, column=2, options=freq_options, default_value=freq_initial)
