@@ -298,7 +298,7 @@ def create_custom_combobox(row, column, options, default_value):
 
 # Function to resize the image
 def resize_image(event):
-    new_width = event.width // 6  # Adjust the scale as needed
+    new_width = event.width // 2  # Adjust the scale as needed
     new_height = int(new_width * aspect_ratio)
     resized_image = original_image.resize((new_width, new_height), Image.ANTIALIAS)
     logo = ImageTk.PhotoImage(resized_image)
