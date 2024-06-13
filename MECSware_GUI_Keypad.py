@@ -417,7 +417,7 @@ submit_button.grid(row=6, column=2, pady=(15, 5), columnspan=2)
 
 # Create a button to open input window
 keypad_button = ttk.Button(frame, text="Keypad", width=width_c-6, command=lambda: open_keypad(None), style='Mini.TButton')
-keypad_button.grid(row=6, column=7, pady=(15, 5), padx=(50, 50), columnspan=1, sticky=tk.W)
+keypad_button.grid(row=6, column=8, pady=(15, 5), padx=(50, 50), columnspan=1, sticky=tk.W)
 
 # Bind the click event to close the window
 logo_label.bind("<Button-1>", lambda event: root.destroy())
@@ -515,7 +515,7 @@ frame.grid_columnconfigure(0, weight=1)
 
 # Create a text widget to display the output
 output_text = tk.Text(frame, bg="black", fg="white", font=('TkDefaultFont', 20))
-output_text.grid(row=7, column=0, columnspan=8, pady=(15,0), padx=(30,20), sticky="nsew")
+output_text.grid(row=7, column=0, columnspan=9, pady=(15,0), padx=(30,20), sticky="nsew")
 
 # Start the main event loop
 root.mainloop()
