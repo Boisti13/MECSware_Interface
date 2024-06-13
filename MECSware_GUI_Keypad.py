@@ -413,7 +413,7 @@ get_data_button.grid(row=6, column=1, pady=(15,5), columnspan=1)
 
 # Create a button to submit the command
 submit_button = ttk.Button(frame, text="Submit Data", command=submit_command, style='Standard.TButton')
-submit_button.grid(row=6, column=2, pady=(15, 5), columnspan=2)
+submit_button.grid(row=6, column=2, pady=(15, 5), padx=(50, 0), columnspan=2)
 
 # Create a button to open input window
 keypad_button = ttk.Button(frame, text="Keypad", width=width_c-6, command=lambda: open_keypad(None), style='Mini.TButton')
