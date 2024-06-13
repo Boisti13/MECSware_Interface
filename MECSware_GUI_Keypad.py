@@ -295,16 +295,41 @@ def create_custom_combobox(row, column, options, default_value):
 
     return combobox_entry
 
+
+# Function to resize the image
+def resize_image(event):
+    new_width = event.width // 8  # Adjust the scale as needed
+    new_height = int(new_width * aspect_ratio)
+    resized_image = original_image.resize((new_width, new_height), Image.ANTIALIAS)
+    logo = ImageTk.PhotoImage(resized_image)
+    logo_label.config(image=logo)
+    logo_label.image = logo  # Keep a reference to avoid garbage collection
+
 # Load and display the logo image
 try:
-    image = Image.open(logo_path)
-    image = image.convert("RGBA")  # Ensure the image has an alpha channel for transparency
-    image_resized = image.resize((300, 150), Image.ANTIALIAS)
-    logo = ImageTk.PhotoImage(image_resized)
+    original_image = Image.open(logo_path)
+    original_image = original_image.convert("RGBA")  # Ensure the image has an alpha channel for transparency
+    aspect_ratio = original_image.height / original_image.width
+    initial_width = 200
+    initial_height = int(initial_width * aspect_ratio)
+    resized_image = original_image.resize((initial_width, initial_height), Image.ANTIALIAS)
+    logo = ImageTk.PhotoImage(resized_image)
     logo_label = tk.Label(frame, image=logo, bg="ghost white")
     logo_label.grid(row=0, column=6, rowspan=2, columnspan=2)  # Adjust the position as needed
 except Exception as e:
     messagebox.showerror("Error", f"Unable to load image: {e}")
+
+    
+# Load and display the logo image
+#try:
+#    image = Image.open(logo_path)
+#    image = image.convert("RGBA")  # Ensure the image has an alpha channel for transparency
+#    image_resized = image.resize((300, 150), Image.ANTIALIAS)
+#    logo = ImageTk.PhotoImage(image_resized)
+#    logo_label = tk.Label(frame, image=logo, bg="ghost white")
+#    logo_label.grid(row=0, column=6, rowspan=2, columnspan=2)  # Adjust the position as needed
+#except Exception as e:
+#    messagebox.showerror("Error", f"Unable to load image: {e}")
 
 width_c = 15
 
