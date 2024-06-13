@@ -20,7 +20,7 @@ power_value = ""
 freq_options = ["3710", "3720", "3730", "3740", "3750", "3760", "3770", "3780", "3790"]
 bw_options = ["20", "40", "50", "60", "80", "90", "100"]
 ratio_options = ["5:5", "7:3", "4:1"]
-power_options = ["10", "12", "14", "16", "18", "20"]
+power_options = ["0", "2", "4", "6", "8", "10", "12", "14", "16", "18", "20"]
 
 # Initial setup values
 ip_initial = "10.0.1.2"
@@ -393,17 +393,17 @@ power_combobox = create_custom_combobox(row=5, column=3, options=power_options, 
 # Create labels to display the current settings
 current_freq_label = ttk.Label(frame, text="Frequency:", width=width_c, anchor=tk.E, font=Entries_bold_font)
 current_freq_label.grid(row=2, column=0, pady=(5))
-frequency_label = ttk.Label(frame, text="", width=width_c, anchor=tk.W, justify='center', font=standard_font)
+frequency_label = ttk.Label(frame, text="", width=width_c-5, anchor=tk.W, justify='center', font=standard_font)
 frequency_label.grid(row=2, column=1, pady=(5))
 
 current_bw_label = ttk.Label(frame, text="Bandwidth:", width=width_c, anchor=tk.E, font=Entries_bold_font)
 current_bw_label.grid(row=3, column=0, pady=5)
-bandwidth_label = ttk.Label(frame, text="", width=width_c, anchor=tk.W, justify='center', font=standard_font)
+bandwidth_label = ttk.Label(frame, text="", width=width_c-5, anchor=tk.W, justify='center', font=standard_font)
 bandwidth_label.grid(row=3, column=1, pady=5)
 
 current_power_label = ttk.Label(frame, text="Power:", width=width_c, anchor=tk.E, font=Entries_bold_font)
 current_power_label.grid(row=5, column=0, pady=5)
-power_label = ttk.Label(frame, text="", width=width_c, anchor=tk.W, justify='center', font=standard_font)
+power_label = ttk.Label(frame, text="", width=width_c-5, anchor=tk.W, justify='center', font=standard_font)
 power_label.grid(row=5, column=1, pady=5)
 
 # Create a button to test the connection
