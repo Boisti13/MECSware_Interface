@@ -44,7 +44,7 @@ root = tk.Tk()
 root.title("MECSware Interface")
 
 # Change the background color of the main window
-root.config(background='ghost white')  # Set your desired background color
+#root.config(background='ghost white')  # Set your desired background color
 
 # Setup for fullscreen, keyboard needed to close, or click on wicon logo
 #root.attributes('-fullscreen', True)
@@ -67,8 +67,8 @@ style = ThemedStyle(root)
 style.set_theme("adapta")  # Replace "adapta" with your desired theme
 
 # Configure the background color for the frame and label styles
-style.configure('TFrame', background='light blue')
-style.configure('TLabel', background='light blue')
+style.configure('TFrame', background='ghost white')
+style.configure('TLabel', background='ghost white')
 
 # Create style for buttons
 style.configure('Standard.TButton', font=button_font)
