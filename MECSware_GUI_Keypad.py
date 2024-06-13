@@ -152,12 +152,12 @@ def ping_test():
         output_text.insert(tk.END, result.stdout)
 
         # Show the ping result in a messagebox
-        #if result.returncode == 0:
-        #    messagebox.showinfo("Ping Result", "Ping successful!")
-        #else:
-        #    messagebox.showerror("Ping Result", "Ping failed!")
-    #except Exception as e:
-    #    messagebox.showerror("Error", f"An error occurred: {e}")
+        if result.returncode == 0:
+            messagebox.showinfo("Ping Result", "Ping successful!")
+        else:
+            messagebox.showerror("Ping Result", "Ping failed!")
+    except Exception as e:
+        messagebox.showerror("Error", f"An error occurred: {e}")
 
 def submit_command():
     """Function to submit a command and show a confirmation message."""
