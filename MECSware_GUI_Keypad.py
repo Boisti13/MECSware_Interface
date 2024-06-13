@@ -362,7 +362,7 @@ port_entry.grid(row=0, column=3, columnspan=1)
 x_spacing = 10
 y_spacing = 20
 
-current_settings_label = ttk.Label(frame, text="Current Settings", width=width_c-5, anchor=tk.CENTER, font=bold_font)
+current_settings_label = ttk.Label(frame, text="Current Settings", width=width_c, anchor=tk.CENTER, font=bold_font)
 current_settings_label.grid(row=1, column=1, columnspan=2, pady=y_spacing, padx=x_spacing)
 
 desired_settings_label = ttk.Label(frame, text="Desired Settings", width=width_c, anchor=tk.CENTER, font=bold_font)
@@ -389,17 +389,17 @@ power_combobox = create_custom_combobox(row=5, column=3, options=power_options, 
 # Create labels to display the current settings
 current_freq_label = ttk.Label(frame, text="Frequency:", width=width_c, anchor=tk.E, font=Entries_bold_font)
 current_freq_label.grid(row=2, column=0, pady=(5))
-frequency_label = ttk.Label(frame, text="", width=width_c-5, anchor=tk.W, justify='center', font=standard_font)
+frequency_label = ttk.Label(frame, text="", width=width_c-10, anchor=tk.W, justify='center', font=standard_font)
 frequency_label.grid(row=2, column=1, pady=(5))
 
 current_bw_label = ttk.Label(frame, text="Bandwidth:", width=width_c, anchor=tk.E, font=Entries_bold_font)
 current_bw_label.grid(row=3, column=0, pady=5)
-bandwidth_label = ttk.Label(frame, text="", width=width_c-5, anchor=tk.W, justify='center', font=standard_font)
+bandwidth_label = ttk.Label(frame, text="", width=width_c-10, anchor=tk.W, justify='center', font=standard_font)
 bandwidth_label.grid(row=3, column=1, pady=5)
 
 current_power_label = ttk.Label(frame, text="Power:", width=width_c, anchor=tk.E, font=Entries_bold_font)
 current_power_label.grid(row=5, column=0, pady=5)
-power_label = ttk.Label(frame, text="", width=width_c-5, anchor=tk.W, justify='center', font=standard_font)
+power_label = ttk.Label(frame, text="", width=width_c-10, anchor=tk.W, justify='center', font=standard_font)
 power_label.grid(row=5, column=1, pady=5)
 
 # Create a button to test the connection
