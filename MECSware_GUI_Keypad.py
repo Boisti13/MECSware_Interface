@@ -321,7 +321,7 @@ try:
     resized_image = original_image.resize((initial_width, initial_height), Image.ANTIALIAS)
     logo = ImageTk.PhotoImage(resized_image)
     logo_label = tk.Label(frame, image=logo, bg="ghost white")
-    logo_label.grid(row=0, column=6, rowspan=3, columnspan=2)  # Adjust the position as needed
+    logo_label.grid(row=0, column=5, rowspan=3, columnspan=2)  # Adjust the position as needed
 except Exception as e:
     messagebox.showerror("Error", f"Unable to load image: {e}")
 
