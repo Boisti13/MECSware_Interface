@@ -360,7 +360,7 @@ port_entry.insert(0, port_initial)
 port_entry.grid(row=0, column=3, columnspan=1)
 
 # Create labels for current and desired settings
-x_spacing = 0
+x_spacing = 10
 y_spacing = 20
 
 current_settings_label = ttk.Label(frame, text="Current Settings", width=width_c, anchor=tk.CENTER, font=bold_font)
