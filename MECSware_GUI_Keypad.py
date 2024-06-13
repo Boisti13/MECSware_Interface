@@ -516,7 +516,7 @@ frame.grid_rowconfigure(7, weight=1)  # Row containing the output_text widget
 frame.grid_columnconfigure(0, weight=1)
 
 # Create a text widget to display the output
-output_text = tk.Text(frame, bg="black", fg="white", font=('TkDefaultFont', 14))
+output_text = tk.Text(frame, bg="black", fg="white", font=('TkDefaultFont', 20))
 output_text.grid(row=7, column=0, columnspan=8, pady=(15,0), padx=(30,20), sticky="nsew")
 
 # Start the main event loop
