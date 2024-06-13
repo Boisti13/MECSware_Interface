@@ -64,7 +64,7 @@ root.geometry(f"{screen_width}x{screen_height}")
 
 # Set the theme for the application
 style = ThemedStyle(root)
-style.set_theme("adapta")  # Replace "adapta" with your desired theme
+#style.set_theme("adapta")  # Replace "adapta" with your desired theme
 # Create style for buttons
 style.configure('Standard.TButton', font=button_font)
 
