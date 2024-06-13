@@ -370,16 +370,16 @@ desired_settings_label = ttk.Label(frame, text="Desired Settings", width=width_c
 desired_settings_label.grid(row=1, column=2, columnspan=2, pady=y_spacing, padx=x_spacing)
 
 freq_label = ttk.Label(frame, text="[MHz]", width=width_c-10, anchor=tk.W, font=Entries_bold_font)
-freq_label.grid(row=2, column=4, pady=(5), padx=(0, 150), sticky=tk.W)
+freq_label.grid(row=2, column=4, pady=(5), padx=(0, 120), sticky=tk.W)
 
 bw_label = ttk.Label(frame, text="[MHz]", width=width_c-10, anchor=tk.W, font=Entries_bold_font)
-bw_label.grid(row=3, column=4, pady=(10,0), padx=(0, 150), sticky=tk.W)
+bw_label.grid(row=3, column=4, pady=(10,0), padx=(0, 120), sticky=tk.W)
 
 ratio_label = ttk.Label(frame, text="Ratio:", width=width_c, anchor=tk.E, font=Entries_bold_font)
 ratio_label.grid(row=4, column=0)
 
 power_label = ttk.Label(frame, text="[dBm]", width=width_c-10, anchor=tk.W, font=Entries_bold_font)
-power_label.grid(row=5, column=4, pady=(10,0), padx=(0, 150), sticky=tk.W)
+power_label.grid(row=5, column=4, pady=(10,0), padx=(0, 120), sticky=tk.W)
 
 # Create custom comboboxes for frequency, bandwidth, ratio, and power
 freq_combobox = create_custom_combobox(row=2, column=2, options=freq_options, default_value=freq_initial)
