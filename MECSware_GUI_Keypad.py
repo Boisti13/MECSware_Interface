@@ -251,7 +251,7 @@ def create_custom_combobox(row, column, options, default_value):
 
     # Create a Listbox to act as the dropdown list with a scrollbar
     listbox_frame = tk.Frame(frame)
-    listbox = tk.Listbox(listbox_frame, font=('TkDefaultFont', 20), width=20, height=len(options))
+    listbox = tk.Listbox(listbox_frame, font=('TkDefaultFont', 28), width=20, height=len(options))
 
     listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
@@ -300,9 +300,6 @@ def create_custom_combobox(row, column, options, default_value):
     listbox_frame.place_forget()
 
     return combobox_entry
-
-
-
 
 # Function to resize the image
 def resize_image(event):
