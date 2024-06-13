@@ -252,10 +252,10 @@ def create_custom_combobox(row, column, options, default_value):
     # Create a Listbox to act as the dropdown list with a scrollbar
     listbox_frame = tk.Frame(frame)
     listbox = tk.Listbox(listbox_frame, font=('TkDefaultFont', 20), width=20)
-    #scrollbar = ttk.Scrollbar(listbox_frame, orient=tk.VERTICAL, command=listbox.yview)
-    #listbox.config(yscrollcommand=scrollbar.set)
+    scrollbar = ttk.Scrollbar(listbox_frame, orient=tk.VERTICAL, command=listbox.yview)
+    listbox.config(yscrollcommand=scrollbar.set)
 
-    #scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+    scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
     listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
     # Populate the listbox with options
