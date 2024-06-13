@@ -349,7 +349,7 @@ band_entry.grid(row=5, column=8, sticky=tk.W, padx=(0,100))
 # Create labels and entry fields for IP Address and Port
 ip_label = ttk.Label(frame, text="IP Address:", width=width_c, anchor=tk.E, font = standard_font)
 ip_label.grid(row=0, column=0, columnspan=1)
-ip_entry = ttk.Entry(frame, width=width_c, justify='center', font = standard_font)
+ip_entry = ttk.Entry(frame, width=width_c-5, justify='center', font = standard_font)
 ip_entry.insert(0, ip_initial)
 ip_entry.grid(row=0, column=1, columnspan=1)
 
