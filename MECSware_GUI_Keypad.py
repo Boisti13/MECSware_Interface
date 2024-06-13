@@ -408,7 +408,7 @@ test_button.grid(row=0, column=4, pady=5, columnspan=2, sticky=tk.W)
 
 # Create a button to get current data
 get_data_button = ttk.Button(frame, text="Get Current Data", command=get_current_data, style='Standard.TButton')
-get_data_button.grid(row=6, column=1, pady=(15,5), columnspan=2)
+get_data_button.grid(row=6, column=1, pady=(5,5), columnspan=2)
 
 # Create a button to submit the command
 submit_button = ttk.Button(frame, text="Submit Command", command=submit_command, style='Standard.TButton')
