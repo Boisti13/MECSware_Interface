@@ -247,7 +247,7 @@ root.bind("<Button-1>", close_open_lists)
 # Create a function to set up a custom combobox
 def create_custom_combobox(row, column, options, default_value):
     # Create a combobox-like entry widget
-    combobox_entry = ttk.Entry(frame, justify='right', font=standard_font, width=10)
+    combobox_entry = ttk.Entry(frame, justify='right', font=standard_font, width=5)
     combobox_entry.grid(row=row, column=column, padx=10, pady=10)
 
     # Create a Listbox to act as the dropdown list with a scrollbar
@@ -416,7 +416,7 @@ submit_button = ttk.Button(frame, text="Submit Command", command=submit_command,
 submit_button.grid(row=6, column=3, pady=(15, 5), columnspan=2)
 
 # Create a button to open input window
-keypad_button = ttk.Button(frame, text="Keypad", width=width_c-6, command=lambda: open_keypad(None), style='Standard.TButton')
+keypad_button = ttk.Button(frame, text="Keypad", width=width_c-6, command=lambda: open_keypad(None), style='Mini.TButton')
 keypad_button.grid(row=6, column=7, pady=(15, 5), padx=(50, 50), columnspan=1, sticky=tk.W)
 
 # Bind the click event to close the window
