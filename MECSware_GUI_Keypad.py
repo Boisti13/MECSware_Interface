@@ -64,7 +64,12 @@ root.geometry(f"{screen_width}x{screen_height}")
 
 # Set the theme for the application
 style = ThemedStyle(root)
-#style.set_theme("adapta")  # Replace "adapta" with your desired theme
+style.set_theme("adapta")  # Replace "adapta" with your desired theme
+
+# Configure the background color for the frame and label styles
+style.configure('TFrame', background='light blue')
+style.configure('TLabel', background='light blue')
+
 # Create style for buttons
 style.configure('Standard.TButton', font=button_font)
 
@@ -74,7 +79,7 @@ root.grid_rowconfigure(0, weight=1)
 root.grid_columnconfigure(0, weight=1)
 
 # Create the main frame with padding
-frame = ttk.Frame(root, padding="20")
+frame = ttk.Frame(root, padding="20", style='TFrame')
 frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
 frame.config(style='TFrame')  # Set style to ensure consistency
 for i in range(8):
